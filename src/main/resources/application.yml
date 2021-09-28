@@ -1,0 +1,23 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  profiles:
+    active: ${ENVIRONMENT}
+  rabbitmq:
+    host: ${RABBIT_HOST}
+    port: ${RABBIT_PORT}
+    username: ${RABBIT_USERNAME}
+    password: ${RABBIT_PASSWORD}
+    virtual-host: ${RABBIT_VHOST}
+    queue:
+      name: ${RABBIT_QUEUE_NAME}
+      exchange: ${RABBIT_QUEUE_EXCHANGE}
+      routing-key: ${RABBIT_QUEUE_ROUTING_KEY}
+      max-retries: ${RABBIT_QUEUE_MAX_RETRIES:3}
+      dead-letter:
+        name: ${RABBIT_QUEUE_DLQ_NAME}
+        routing-key: ${RABBIT_QUEUE_DLQ_ROUTING_KEY}
+      parking-lot:
+        name: ${RABBIT_QUEUE_PLQ_NAME}
+        routing-key: ${RABBIT_QUEUE_PLQ_ROUTING_KEY}
