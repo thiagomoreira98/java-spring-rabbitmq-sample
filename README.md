@@ -1,1 +1,1 @@
-# java-rabbitmq-sample
+# java-spring-rabbitmq-sample
